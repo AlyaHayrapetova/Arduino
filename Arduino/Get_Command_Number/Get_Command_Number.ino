@@ -5,7 +5,8 @@ String command = "null";
 String new_command = "";
 bool flag  = false;
 char n;
-char c;
+String c;
+char name2;
 
 
 void setup() {
@@ -39,14 +40,10 @@ void loop() {
               Serial.println();
               n = getCommandCount(command);
               Serial.println(n);
-               // Serial.println(getCommand(command));
-               c = getArrayFromCommandNumber(command);
-              
-
-              
-           
-
-
+              c = getCommand(command);
+//            Serial.println(c);
+//            name2  = getArrayFromCommandNumber(c);
+//            Serial.println(name2);
 }
 }
 
@@ -63,7 +60,6 @@ char getCommandCount(String comm){
            return number;
 //           Serial.println(number);
 //           Serial.println(temp_command);
-           
      }
 
 
@@ -79,24 +75,26 @@ char getCommandCount(String comm){
      }
 
 
-char getArrayFromCommandNumber(String command){
-  int len = getCommandCount(command) - 48;
-  Serial.println(len);
-  String line = getCommand(command);
-  String newArray[len+1];
+char* getArrayFromCommandNumber(char command){
+  char line [] ="(String) getCommand((String)command)"; //string for split
+  int len = getCommandCount((String)command) - 48; // newArray size
+  Serial.println(len+1);
+  char *p = strtok(line,"&");
+  char* newArray[len+1]; //newArray
+  char *b;
   int i = 0;
 
-while(i<(len+1)){
-  for(int j = 0; j < command.length(); j++){
-    if(command[j]== '&'){
-     break;
-    }
-    newArray[i]+=command[j];
+  while(p!=NULL){
+    newArray[i++] = p;
+    p = strtok(NULL,"&");
   }
-  Serial.println(newArray[i]);
-  i++;
-}
- 
+//  for(i = 0; i < (len+1); i++){
+//    Serial.println(newArray[i]);
+//  }
+return newArray;
+
+
+
 }
      
 
