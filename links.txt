@@ -1,0 +1,5 @@
+
+
+https://github.com/bblanchon/ArduinoJson ////   Arduino json lib
+
+https://github.com/EmergingTechnologyAdvisors/node-serialport   //// Node js Arduion lib
