@@ -4,5 +4,10 @@ https://github.com/bblanchon/ArduinoJson ////   Arduino json lib
 
 https://github.com/EmergingTechnologyAdvisors/node-serialport   //// Node js Arduion lib
 
-
 https://github.com/scotch-io/node-todo   /// node js shablon 
+
+https://github.com/btford/angular-socket-io ///angular-socker-io
+
+https://github.com/btford/briantford.com/blob/master/jade/blog/angular-socket-io.md /// Writing an AngularJS App with Socket.IO
+
+
